@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yani Escolar - Donación de Útiles</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<section id="header" class="py-2 text-center ">
+    <div class="container d-flex align-items-center justify-content-center">
+        <a href="javascript:void(0)" onclick="showSection('inicio')" class="header-link">
+            <img src="Logo.jpg" alt="Logo" class="header-logo">
+            <h2 class="h5 mb-0">Yani Escolar - Donación de Útiles</h2>
+        </a>
+    </div>
+</section>
+<section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" onclick="showSection('inicio')">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" onclick="showSection('registro-usuario')">Registro de Donación</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" onclick="showSection('catalogo')">Catálogo de Donaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" onclick="showSection('registro-donaciones')">Registro General</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+<div id="inicio">
+    <h2>Dona útiles escolares y cambia una vida</h2>
+    <p>Tu pequeña contribución puede ser el gran comienzo para un estudiante. ¡Súmate!</p>
+</div>
+
+<div id="registro-usuario" class="seccion-contenido">
+    <h2>Registra una Nueva Donación</h2>
+    <p>Completa el formulario y sube una foto del artículo que deseas donar.</p>
+    
+    <form id="donation-form">
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Tu Gmail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label>Foto del Artículo:</label>
+        <input type="file" id="gallery-input" accept="image/*" style="display:none;">
+        <input type="file" id="camera-input" accept="image/*" capture style="display:none;">
+        
+        <div class="upload-buttons">
+            <button type="button" class="upload-btn" onclick="document.getElementById('gallery-input').click();">Elegir de la Galería</button>
+            <button type="button" class="upload-btn" onclick="document.getElementById('camera-input').click();">Usar Cámara</button>
+        </div>
+        
+        <img id="image-preview" src="" class="image-preview-container">
+
+        <label for="country">País:</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="city">Ciudad:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="comment">Comentario (opcional para esta donación):</label>
+        <textarea id="comment" name="comment" rows="3"></textarea>
+        
+        <button type="button" class="submit-btn" onclick="registrarDonacion()">Registrar Donación</button>
+    </form>
+</div>
+
+<div id="catalogo" class="seccion-contenido">
+    <h2>Catálogo de Donaciones Disponibles</h2>
+    <div id="catalogo-grid">
+    </div>
+</div>
+
+<div id="registro-donaciones" class="seccion-contenido">
+    <h2>Registro General de Donaciones</h2>
+    <div id="registro-info"></div>
+    <br>
+    <h3>Deja tu Comentario General</h3>
+    <form id="general-comment-form">
+        <label for="comment-username">Tu Nombre:</label>
+        <input type="text" id="comment-username" name="comment-username" required>
+        <label for="general-comment">Comentario:</label>
+        <textarea id="general-comment" name="general-comment" rows="3" required></textarea>
+        <button type="button" class="submit-btn" onclick="addGeneralComment()">Publicar Comentario</button>
+    </form>
+    <div id="comentarios-generales"></div>
+</div>
+
+<div id="footer">
+    <h3>Objetivo de Yani Escolar</h3>
+    <p>✨ Dona útiles escolares y conviértete en parte del cambio que educa, inspira y transforma. ✨
+        Muchos estudiantes con grandes sueños se ven obligados a pausar su camino por algo tan básico como no tener un cuaderno, un libro o una tablet.
+        La falta de útiles escolares es una de las razones silenciosas por las que miles de niños y jóvenes abandonan sus estudios cada año.
+        Pero tú puedes ser parte de la solución.
+        Con tu donación, les devuelves no solo materiales, sino también la motivación, la esperanza y la posibilidad de construir su futuro.
+        📚💻✏ Dona útiles escolares y ayuda a que ningún estudiante tenga que elegir entre aprender o rendirse.
+    </p>
+    <div class="footer-bottom">
+        <div class="footer-section">
+            <h4>Misión</h4>
+            <p>Facilitar el acceso a útiles escolares para niños y jóvenes en situación vulnerable, promoviendo la continuidad educativa y reduciendo el abandono escolar.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Visión</h4>
+            <p>Ser una plataforma solidaria reconocida por inspirar una cultura de apoyo educativo y contribuir al desarrollo de una sociedad más justa y preparada.</p>
+        </div>
+    </div>
+</div>
+    <script src="java.js"></script>
+</body>
+</html>

@@ -25,16 +25,15 @@ body{
   object-fit: cover;     
   margin-right: 10px;
 }
-/* New style for the header link to make the entire logo area clickable */
 .header-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* Ensure text color remains white */
-    text-decoration: none; /* Remove underline from the link */
+    color: white;
+    text-decoration: none;
 }
 .header-link:hover {
-    color: white; /* Maintain white color on hover */
+    color: white;
     text-decoration: none;
 }
 
@@ -49,7 +48,7 @@ body{
     color: white;
     padding: 100px 20px;
     text-align: center;
-    min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
+    min-height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,7 +70,7 @@ body{
     font-size: 36px;
 }
 
-#donation-form, #general-comment-form { /* Apply to both forms */
+#donation-form, #general-comment-form
     background: white;
     padding: 30px;
     border-radius: 8px;
@@ -95,7 +94,7 @@ body{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: sans-serif; /* Changed from 'Comic Sans MS' for better readability */
+    font-family: sans-serif;
     font-size: 16px;
     box-sizing: border-box;
 }
@@ -105,7 +104,7 @@ body{
     margin: 10px 0;
 }
 .upload-btn {
-    font-family: sans-serif; /* Changed from 'Comic Sans MS' for better readability */
+    font-family: sans-serif;
     flex-grow: 1;
     padding: 10px;
     background: #5c677d;
@@ -125,7 +124,7 @@ body{
     min-height: 100px; /* Para que el borde sea visible antes de cargar imagen */
 }
 .submit-btn {
-    font-family: sans-serif; /* Changed from 'Comic Sans MS' for better readability */
+    font-family: sans-serif;
     width: 100%;
     padding: 15px;
     margin-top: 20px;
@@ -143,7 +142,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Space between items */
+    gap: 20px;
 }
 .catalogo-item {
     background: white;
@@ -152,10 +151,10 @@ body{
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 280px; /* Slightly larger item width */
+    width: 280px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes button to bottom */
+    justify-content: space-between;
 }
 .catalogo-item img { 
     max-width: 100%; 
@@ -170,17 +169,17 @@ body{
     color: #333; 
     margin-bottom: 5px;
 }
-.catalogo-item p.donation-comment { /* Specific style for donation comments */
+.catalogo-item p.donation-comment {
     font-size: 14px; 
     color: #666; 
-    height: auto; /* Allow comments to take more height */
-    min-height: 50px; /* Ensures consistent box size */
+    height: auto;
+    min-height: 50px;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 10px;
 }
 .catalogo-item button {
-    font-family: sans-serif; /* Changed from 'Comic Sans MS' for better readability */
+    font-family: sans-serif;
     background: #28a745;
     color: white;
     padding: 10px 15px;
@@ -189,7 +188,7 @@ body{
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%; /* Make button full width */
+    width: 100%;
 }
 .catalogo-item button:hover {
     background-color: #218838;
@@ -199,10 +198,9 @@ body{
     cursor: not-allowed; 
 }
 .boton-donado:hover {
-    background: #dc3545; /* No change on hover for disabled button */
+    background: #dc3545;
 }
 
-/* --- Footer Styles (Minor adjustments for consistency) --- */
 #footer {
     background: #008080;
     color: white;
